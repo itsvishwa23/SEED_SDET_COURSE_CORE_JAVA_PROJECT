@@ -1,0 +1,34 @@
+package utility;
+
+import java.awt.print.Book;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class StoreUtil extends Book{
+
+	private List<Book> bookList = new ArrayList<>();
+	Scanner sc = new Scanner(System.in);
+
+	public void setBook() {
+		Book book = new Book();
+		System.out.println("Enter The Book ID");
+		book.id = sc.nextInt();
+		System.out.println("Enter The Name of the Book");
+		sc.nextLine();
+		book.name = sc.nextLine();
+		System.out.println("Enter The Price of the Book");
+		book.price = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Enter the Author Name");
+		String author_name = sc.nextLine();
+		book.authors.add(author_name);
+		bookList.add(book);
+		System.out.println("Book Details Stored Successfully");
+		Book.book_count++;
+	}
+
+	public List<Book> getBookList() {
+		return bookList;
+	}
+}

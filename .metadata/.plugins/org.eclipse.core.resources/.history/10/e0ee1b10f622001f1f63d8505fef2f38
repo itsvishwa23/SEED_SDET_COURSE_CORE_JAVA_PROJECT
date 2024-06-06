@@ -1,0 +1,13 @@
+package utility;
+
+import library.Book;
+
+public class PrintUtil {
+
+	public void print_details(StoreUtil storeUtil) {
+		System.out.println("The List of the Book is as Follows:");
+		for (Book book : storeUtil.getBooks()) {
+			System.out.println(book);
+		}
+	}
+}

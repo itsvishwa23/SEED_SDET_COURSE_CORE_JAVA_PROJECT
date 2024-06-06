@@ -1,0 +1,36 @@
+import java.lang.reflect.Method;
+
+public class Book {
+
+	int id;
+	String name;
+	int price;
+	
+	public Book()
+	{
+		id=001;
+		name="Book1";
+		price=250;
+	}
+	
+	public Book(int id, String name, int price)
+	{
+		this.id=id;
+		this.name=name;
+		this.price=price;
+	}
+	 
+	public void setBook(int id, String name, int price) {
+		
+		this.id=id;
+		this.name=name;
+		this.price=price;
+		
+	}
+	
+	@Override
+	public String toString() {
+		
+		return 
+	}
+}

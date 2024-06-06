@@ -1,0 +1,47 @@
+package library;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Book {
+
+	int id;
+	String name;
+	int price;
+	Set<String> set = new HashSet<String> (); 
+	
+	public Book()
+	{
+		id=001;
+		name="Book1";
+		price=250;
+	}
+	
+	public Book(int id, String name, int price)
+	{
+		this.id=id;
+		this.name=name;
+		this.price=price;
+	}
+	 
+	public void setBook(int id, String name, int price) {
+		
+		this.id=id;
+		this.name=name;
+		this.price=price;
+		
+	}
+	
+	@Override
+	public String toString() {
+		
+	return "The id of the book is " +id+ "The name of the book is: "+name+ "The Price of the book is " +price;
+	}
+	
+	public void getBook() {
+		
+		System.out.println("The id of the book is " + id + " The name of the book is: " + name + " The Price of the book is " + price);
+
+		
+	}
+}

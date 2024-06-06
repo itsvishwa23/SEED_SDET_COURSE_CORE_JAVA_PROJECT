@@ -1,0 +1,43 @@
+package utility;
+
+import java.util.Scanner;
+import java.util.Set;
+
+import library.Book;
+
+public class StoreUtil extends Book {
+
+	Scanner sc = new Scanner(System.in);
+
+	public void setBook() {
+
+		System.out.println("Enter The Book ID");
+		id = sc.nextInt();
+		System.out.println("Enter The Name of the Book");
+		name = sc.nextLine();
+		System.out.println("Enter The Price of the Book");
+		price = sc.nextInt();
+
+	}
+
+	public void addAuthor(String author) {
+		System.out.println("Enter the Author Name");
+		String author_name;
+		author_name = sc.nextLine();
+		this.authors.add(author_name);
+	}
+
+	public void removeAuthor(String author) {
+		this.authors.remove(author);
+	}
+
+	public Set<String> getAuthors() {
+		return this.authors;
+	}
+
+	public void getBook() {
+		System.out.println("The id of the book is " + id + ", The name of the book is: " + name
+				+ ", The price of the book is " + price + ", The authors are: " + authors);
+	}
+
+}

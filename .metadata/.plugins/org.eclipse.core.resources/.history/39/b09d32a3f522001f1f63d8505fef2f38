@@ -1,0 +1,65 @@
+package library_main;
+
+import java.util.Scanner;
+
+import library.Book;
+import utility.PrintUtil;
+import utility.StoreUtil;
+
+public class Library_Main {
+
+    public static void main(String[] args) {
+
+        int choice;
+        Scanner sc = new Scanner(System.in);
+        StoreUtil storeUtil = new StoreUtil();
+        PrintUtil printUtil = new PrintUtil();
+
+        while (true) {
+            System.out.println("***Enter The Choice***");
+            System.out.println("*** 1: Create Book Object***");
+            System.out.println("*** 2: Add Books ***");
+            System.out.println("*** 3: Get No of Books ***");
+            System.out.println("*** 4: PrintList of Books ***");
+            System.out.println("*** 5: Exit ***");
+
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1: {
+                    Book b1 = new Book();
+                    System.out.println("Book Object Created Successfully");
+                    break;
+                }
+
+                case 2: {
+                    storeUtil.setBook();
+                    break;
+                }
+
+                case 3: {
+                    PrintUtil p1 = new PrintUtil();
+                    p1.get_no_of_book(storeUtil);
+                    break;
+                }
+
+                case 4: {
+                    printUtil.print_details(storeUtil);
+                    break;
+                }
+
+                case 5: {
+                    System.out.println("Exiting...");
+                    sc.close();
+                    System.exit(0);
+                    break;
+                }
+
+                default: {
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
+                }
+            }
+        }
+    }
+}

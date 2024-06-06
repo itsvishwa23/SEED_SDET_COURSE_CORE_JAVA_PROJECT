@@ -1,0 +1,15 @@
+package utility;
+
+public class PrintUtil extends StoreUtil {
+
+	public void get_no_of_book() {
+
+		System.out.println(book_count);
+
+	}
+	
+	public void print_details() {
+		
+	}
+
+}

@@ -1,0 +1,49 @@
+package utility;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+import utility.CompareBookByName;
+import utility.CompareBookByPrice;
+
+public class StoreUtil {
+
+	private List<Book> bookList = new ArrayList<>();
+	Scanner sc = new Scanner(System.in);
+
+	public void setBook() {
+		System.out.println("Enter The Book ID");
+		int id = sc.nextInt();
+		System.out.println("Enter The Name of the Book");
+		sc.nextLine();
+		String name = sc.nextLine();
+		System.out.println("Enter The Price of the Book");
+		int price = sc.nextInt();
+		sc.nextLine();
+		System.out.println("Enter the Author Name");
+		String author_name = sc.nextLine();
+
+		Book book = new Book(id, name, price);
+		book.authors.add(author_name);
+
+		bookList.add(book);
+		System.out.println("Book Details Stored Successfully");
+		Book.book_count++;
+	}
+
+	public List<Book> getBookList() {
+		return bookList;
+	}
+
+	public void sortBooksByName() {
+		Collections.sort(bookList, new CompareBookByName());
+		System.out.println("Books sorted by name successfully.");
+	}
+
+	public void sortBooksByPrice() {
+		Collections.sort(bookList, new CompareBookByPrice());
+		System.out.println("Books sorted by price successfully.");
+	}
+}
